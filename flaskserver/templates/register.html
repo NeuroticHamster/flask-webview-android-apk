@@ -1,0 +1,39 @@
+
+{% extends 'loginnav.html' %}
+{% block lognav %}
+<head>
+
+
+
+<link href = "bootstrap.min.css" rel='stylesheet'>
+
+"<link href = 'style.css' rel='stylesheet'?
+link='{{ url_for('static', filename='bootstrap.min.css') }}' rel='stylesheet'>
+
+
+
+</head>
+
+
+<h1>Register</h1>
+
+<form>
+
+<div class='spaced'> 
+
+email:
+<input type='password' class='form-control'>
+
+</div>
+<div>
+
+password:
+<input type='password' class='form-control'>
+
+</div>
+<div>
+<input type='checkbox'>
+</div>
+<button type='submit' class='btn btn-primary'>Submit</button>
+</form>
+{% endblock %}
