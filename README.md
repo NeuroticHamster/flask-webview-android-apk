@@ -1,0 +1,2 @@
+# flask-webview-android-apk
+a webview I would like to get on the android play store. Uses buildozer with the flask requirements. Seems to run well. Should make android development really fast and the application should run better than most mobile gui frameworks. There are some css frameworks that can make webviews look pretty natural so im pretty psyched. Need to refine what my idea for the project will encompass.
