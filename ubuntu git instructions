@@ -1,0 +1,4 @@
+$ git remote add origin git@github.com:NeuroticHamster/ElectricSleep
+$ git push -u origin master
+
+ git remote add origin https://github.com/NeuroticHamster/ElectricSleep

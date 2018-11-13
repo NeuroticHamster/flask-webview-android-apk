@@ -1,0 +1,12 @@
+git init
+git add
+git commit
+git remote add github <link to repository>
+get push master github
+
+rm -r remove file/folder
+rm -rf remove without asking
+nautilus = root
+chmod +x filename.sh  converts to executable
+gzip unzip for ectraction
+
