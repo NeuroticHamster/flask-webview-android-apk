@@ -14,27 +14,78 @@ padding:300px,300px;
 </style>
 
 <link href='/ratchet-2.0.2/dist/css/ratchet.css', rel='stylesheet'>
+<link href = "bootstrap.min.css" rel='stylesheet'>
 
+<link href="/OnsenUI-dist-2.10.5/css/onsenui.css", rel='stylesheet'>
+<link href='/OnsenUI-dist-2.10.5/css/onsen-css-components.min.css', rel='stylesheet'>
+<script src='/OnsenUI-dist-2.10.5/js/onsenui.min.js'></script>
 
 <body>
-<h3>quick loggin<h3>
 
-  <h3> What should we call you<h3>
+<!--  <div class="toolbar toolbar--material">
+  <div class="toolbar__center toolbar--material__center">
+    <a href='/loggin'></a>
+    Title
+  </div>
+  <div class="toolbar__center toolbar--material__center">
+    Title
+  </div>
+</div>-->
+<center><h3>quick loggin</h3>
+
+  <h3> What should we call you?<h3></center>
     <form method="POST" action=''>
       {{csrf_token}}
     {{form.username}}
-<button type='submit' value='submit'>Submit</button>
-
-
-<!-- list layout ratchet -->
-
+<button class='btn btn-primary' type='submit' value='submit'>Submit</button>
+<form method='POST'>
+  {% for o in data %}
+  {% for i in o %}
 <ul class="table-view">
   <li class="table-view-cell">
     <a class="navigate-right">
       <span class="badge">5</span>
-      Item 1
+      
+      <input type="radio" name="news2" value={{i}}>
+
+      {{i}}
+    </input>
     </a>
   </li>
+
+  {% endfor %}
+  {% endfor %}
+  
+</form>
+
+<!-- list layout ratchet -->
+
+<!--<table>
+    <tr><td><input type="radio" name="news2" value="1">
+        <td>JAN
+        <td>2000
+        <td>- Title 1
+   <tr><td><input type="radio" name="news2" value="2">
+        <td>FEB
+        <td>1191
+        <td>- Title 2
+      <tr><td><input type="radio" name="news2" value="3">
+        <td>MAR
+        <td>2014
+        <td>- Title 3
+</table>-->
+
+
+
+
+<!--
+<form method='post'>
+<select name=comp_select>
+  {% for o in data  %}
+  <option value= '{{ o }}'>{{o}}<option>
+  {% endfor %}
+  </select>
+  </form>
   <li class="table-view-cell">
     <a class="navigate-right">
       <span class="badge">5</span>
@@ -44,10 +95,10 @@ padding:300px,300px;
   <li class="table-view-cell">
     <a class="navigate-right">
       <span class="badge">5</span>
-      Item 3
+      Item 
     </a>
   </li>
-</ul>
+</ul>-->
 
 
 

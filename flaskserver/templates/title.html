@@ -1,6 +1,9 @@
 
 
 <head>
+  <script src='/home/thedude/Desktop/flaskserver/static/ratchet-2.0.2/js/push.js'></script>
+
+<link href='/ratchet-2.0.2/dist/css/ratchet.css', rel='stylesheet'>
 <!--  <script src='/ratchet-2.0.2/js/segmented-controllers.js'></script>-->
 
 <link href='/ratchet-2.0.2/dist/css/ratchet.css', rel='stylesheet'>
@@ -25,17 +28,31 @@
 {% endblock %}
 {% block foot %}
 {% endblock %}
+
 <nav class="bar bar-tab">
   <a class="tab-item active" href="#">
-    Label
+    <span class="icon icon-home"></span>
+    <span class="tab-label">Home</span>
   </a>
   <a class="tab-item" href="#">
-    Label
+    <span class="icon icon-person"></span>
+    <span class="tab-label">Profile</span>
   </a>
   <a class="tab-item" href="#">
-    Label
+    <span class="icon icon-star-filled"></span>
+    <span class="tab-label">Favorites</span>
+  </a>
+  <a class="tab-item" href="#">
+    <span class="icon icon-search"></span>
+    <span class="tab-label">Search</span>
+  </a>
+  <a class="tab-item" href="#">
+    <span class="icon icon-gear"></span>
+    <span class="tab-label">Settings</span>
   </a>
 </nav>
+
+
 
 
 

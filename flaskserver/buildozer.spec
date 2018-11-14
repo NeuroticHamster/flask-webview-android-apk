@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = demoapp2
+title = demoapp3
 
 # (str) Package name
-package.name = demoapp2
+package.name = demoapp3
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
-requirements = flask, sqlite3, sqlalchemy, WTForms, flask-wtf
+requirements = flask, requests, sqlite3, sqlalchemy, WTForms, flask-wtf
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
