@@ -20,8 +20,10 @@ padding:300px,300px;
 <h3>quick loggin<h3>
 
   <h3> What should we call you<h3>
-
-
+    <form method="POST" action=''>
+      {{csrf_token}}
+    {{form.username}}
+<button type='submit' value='submit'>Submit</button>
 
 
 <!-- list layout ratchet -->

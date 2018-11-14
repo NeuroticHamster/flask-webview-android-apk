@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = registerpage
+title = demoapp2
 
 # (str) Package name
-package.name = registerpage
+package.name = demoapp2
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma seperated e.g. requirements = sqlite3,kivy
-requirements = flask
+requirements = flask, sqlite3, sqlalchemy, WTForms, flask-wtf
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -120,7 +120,7 @@ fullscreen = 0
 #android.entrypoint = org.renpy.android.PythonActivity
 
 # (list) Pattern to whitelist for the whole project
-#android.whitelist =
+android.whitelist = sqlite3
 
 # (str) Path to a custom whitelist file
 #android.whitelist_src =

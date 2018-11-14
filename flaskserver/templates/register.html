@@ -1,39 +1,46 @@
-
-{% extends 'loginnav.html' %}
-{% block lognav %}
+{% extends 'title.html' %}
+{% block title %}
 <head>
 
 
 
 <link href = "bootstrap.min.css" rel='stylesheet'>
 
-"<link href = 'style.css' rel='stylesheet'?
+<link href = 'style.css' rel='stylesheet'?
 link='{{ url_for('static', filename='bootstrap.min.css') }}' rel='stylesheet'>
 
+<style>
+	body {margin-top:100px !important;
 
+
+padding:300px,300px;
+
+}
+
+</style>
 
 </head>
 
 
 <h1>Register</h1>
 
-<form>
+<form method='POST', action=''>
 
 <div class='spaced'> 
-
+{{csrf_token}}
 email:
-<input type='password' class='form-control'>
+{{form.username}}
 
 </div>
 <div>
 
 password:
-<input type='password' class='form-control'>
+{{form.password}}
 
 </div>
 <div>
 <input type='checkbox'>
 </div>
-<button type='submit' class='btn btn-primary'>Submit</button>
+<button type='submit' class='btn btn-primary' value='submit'>Submit</button>
 </form>
 {% endblock %}

@@ -2,7 +2,7 @@
 from flask import Flask, render_template, flash, request, redirect, url_for
 from wtforms import StringField, Form, validators
 from flask_wtf import FlaskForm
-
+#from passlib.hash import bcrypt
 from sqlalchemy.orm import sessionmaker
 
 
@@ -40,13 +40,14 @@ class QMForm(FlaskForm):
 base.metadata.create_all(engine)
 base.metadata.bind = engine
 session = sessionmaker(bind=engine)
+session = session()
 
 app = Flask(__name__, static_url_path='')
 
 
 
 @app.route('/', methods=['GET', 'POST'])
-def laanding_page():
+def landing_page():
 
 	form = userMForm()
 
@@ -54,6 +55,16 @@ def laanding_page():
 	if request.method == 'POST':
 		print(request.form.get('username'))
 		print(request.form.get('password'))
+		username = str(request.form.get('username'))
+		
+		q = session.query(logindb.username.like(str(username)), logindb.password).all()
+		for item in q:
+			if item[0] == True:
+
+				print(item[1])
+				if request.form.get('password') == str(item[1]):
+					print('its a match')
+					return redirect('/welcome')
 	return render_template('/homepage.html', form=form)
 
 
@@ -61,12 +72,13 @@ def laanding_page():
 
 @app.route('/quick_loggin', methods=['GET', 'POST'])
 def secondpage():
-	form = QMForm()
+	form = userMForm()
 	
 	
 	if request.method == 'POST':
-		print(request.form.get('name'))
-		logs = quserform(name=str(request.form.get('name')))
+		print(request.form.get('username'))
+		logs = logindb(username=str(request.form.get('username')), password='not_needed')
+		print(str(request.form.get('username')))
 		session.add(logs)
 		session.commit()
 		flash("Successfully created a new book")
@@ -85,11 +97,15 @@ def register():
 	if request.method == 'POST':
 		print(request.form.get('username'))
 		print(request.form.get('password'))
+		password = str(request.form.get('password'))
+		#hashed_password = bcrypt.hash(password)
+		#logs = logindb(username=str(request.form.get('username')), password=str(hashed_password))
 
-		logs = logindb(username=str(request.form.get('username')), password=str(request.form.get('password')))
+		logs = logindb(username=str(request.form.get('username')), password=str(password))
 		session.add(logs)
 		session.commit()
-		return redirect(url_for('welcome'))
+		#print(hashed_password + 'hi')
+		return redirect(url_for('landing_page'))
 	return render_template('/register.html', form=form)
 
 

@@ -1,103 +1,53 @@
-
-{% extends 'loginnav.html' %}
-{% block lognav %}
+{% extends 'title.html' %}
+{% block title %} 
 <head>
+<link href = "bootstrap.min.css" rel='stylesheet'>
 
-
+<link href = 'style.css' rel='stylesheet'?
+link='{{ url_for('static', filename='bootstrap.min.css') }}' rel='stylesheet'>
+</head>
 <style>
-div.spaced {
-padding:300px, 300px,300px,30px;
 
-!important
+body {margin-top:100px !important;
 
-
-
-}
-
-input.form-control {
 
 padding:300px,300px;
-margin-bottom:20px;
 
-}
 
-div.TextChunk{
 
-text-align:center;
 
-}
-!important
 </style>
 
 
 
-<link href = "bootstrap.min.css" rel='stylesheet'>
 
-"<link href = 'style.css' rel='stylesheet'?
-link='{{ url_for('static', filename='bootstrap.min.css') }}' rel='stylesheet'>
+  
 
 
 
-</head>
 
-<body>
-<!--<img src='ic_help_outline_36pt_3x.png'><img>
-Hello World
-<button>check button</button>
-<form><input>username</input>
-<input>password</input>
+  <!-- Prerequisite=This example use ionicons(http://ionicons.com) to display icons. -->
 
-</form>
-<input type=submit>check</input>
-<a href='secondpage'>second page</a>
-  bootstrap -->
-<div class='TextChunk'><h2>Login</h2>
-<h4>Create an account if privacy is a major concern. If you aren't worried about others seeing your activity, creating an account isn't required.</h4>
-<h4>Go ahead and try the application out! You can always create an account later on.</h4>
-<div><a href='registration'>Register</a> or <a href='quick_loggin'> Quick Loggin </a></div></div>
-<form>
+<h1>Login<h1>
+<form action='' method='POST'>
 
-<div class='spaced'> 
-
-email:
-<input type='password' class='form-control'>
-
-</div>
-<div>
-
-password:
-<input type='password' class='form-control'>
-
-</div>
-<div>
-<input type='checkbox'>
-</div>
-<button type='submit' class='btn btn-primary'>Submit</button>
+{{csrf_token}}
+{{form.username}}
+{{form.password}}
+<button class="btn btn-primary" value='submit'>Button</button>
 </form>
 
 
+<h5>Adding a password is optional.<h5>
 
 
 
 
-
-
-  <!-- <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
-
-</body>
 
 {% endblock %}
+
+
+
+
+
+
