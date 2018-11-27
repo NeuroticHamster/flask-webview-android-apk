@@ -1,0 +1,43 @@
+
+
+<head><head>
+<script src='bootstrap.min.js'></script>
+<link href = "bootstrap.min.css" rel='stylesheet'>
+<link href="/OnsenUI-dist-2.10.5/css/onsenui.css", rel='stylesheet'>
+<link href='/OnsenUI-dist-2.10.5/css/onsen-css-components.min.css', rel='stylesheet'>
+<script src='/OnsenUI-dist-2.10.5/js/onsenui.min.js'></script>
+
+</head>
+
+<form method='post' action='' >
+<div class="toolbar">
+  <div class="toolbar__left">
+    <span class="toolbar-button">
+
+    	<select name='navselect' onchange="this.form.submit()">
+        <option = value='new'>Pages</option>
+      		<option = 'check' value='schedule'>Scheduler</option>
+      			<option = 'check' value=home_media>Home media</option>
+      				<option = 'check' value=streaming>Streaming</option>
+      					<option = 'check' value=meditation>Meidation</option>
+      						<option = 'check' value=personel>Personal/option>
+                <option = 'check' value=logout>Logout</option>
+                    
+      </select>
+     
+ </form>
+    </span>
+ 
+  </div>
+
+
+  <div class="toolbar__center">
+    Navigation Bar
+  </div>
+
+  <div class="toolbar__right">
+    <span class="toolbar-button">Label</span>
+  </div>
+</div>
+{% block nav %}
+{% endblock %}
